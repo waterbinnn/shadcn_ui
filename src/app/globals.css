@@ -2,32 +2,68 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background: #ffffff;
+    --foreground: #1a0a00;
+    --card: #ffffff;
+    --card-foreground: #1a0a00;
+    --popover: #ffffff;
+    --popover-foreground: #1a0a00;
+    --primary: #991cff;
+    --primary-foreground: #f0f5ff;
+    --secondary: #1e8bff;
+    --secondary-foreground: #ffffff;
+    --muted: #eaf4ff;
+    --muted-foreground: #69768b;
+    --accent: #eaf4ff;
+    --accent-foreground: #2d1603;
+    --destructive: #ff473d;
+    --destructive-foreground: #f0f5ff;
+    --border: #d4e0e9;
+    --input: #d4e0e9;
+    --ring: #1a0a00;
+    --radius: 0.5rem;
+    --chart-1: #f38661;
+    --chart-2: #47a68d;
+    --chart-3: #355f85;
+    --chart-4: #ffcd54;
+    --chart-5: #ffd245;
+  }
+
+  .dark {
+    --background: #1a0a00;
+    --foreground: #f0f5ff;
+    --card: #1a0a00;
+    --card-foreground: #f0f5ff;
+    --popover: #1a0a00;
+    --popover-foreground: #f0f5ff;
+    --primary: #f0f5ff;
+    --primary-foreground: #2d1603;
+    --secondary: #2c3547;
+    --secondary-foreground: #f0f5ff;
+    --muted: #2c3547;
+    --muted-foreground: #8390a6;
+    --accent: #2c3547;
+    --accent-foreground: #f0f5ff;
+    --destructive: #9d321d;
+    --destructive-foreground: #f0f5ff;
+    --border: #2c3547;
+    --input: #2c3547;
+    --ring: #7987d6;
+    --chart-1: #4186ff;
+    --chart-2: #348080;
+    --chart-3: #d9cc40;
+    --chart-4: #a95bb8;
+    --chart-5: #d1308a;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 }
